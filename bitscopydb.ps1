@@ -9,6 +9,7 @@ function setBitsCopy
     for($j = 0; $j -ge $checkJob; $j--)
     {
         $copyPattern = (Get-Date).AddDays($j).ToString("yyyy_MM_dd")
+        #Filtering file based on needs
         $files = Get-ChildItem -Path $source -Filter *$copyPattern* | Where-Object {$_.Name -notmatch '1205'} | Sort-Object Length
         Write-Host ("About to copy " + $files.Count + " files to " + $destination + " ...")
 
