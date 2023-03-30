@@ -3,7 +3,6 @@ Import-Module bitstransfer
 function setBitsCopy
 {
     param([String]$source, [String]$destination, [Int]$checkJob)
-    $testOnly = 0
     $sleepSeconds = 3
     # Looping backdays for checkjob in the past $checkJob days
     for($j = 0; $j -ge $checkJob; $j--)
